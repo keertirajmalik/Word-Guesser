@@ -105,10 +105,10 @@ extension ViewController {
             
         ])
         
-       createButtons(buttonsView)
+        createButtons(view: buttonsView)
     }
     
-    func createButtons(_ buttonsView: UIView) {
+    func createButtons(view buttonsView: UIView) {
         let width  = 150
         let height = 80
         
