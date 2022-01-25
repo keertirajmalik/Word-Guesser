@@ -19,6 +19,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @objc func letterTapped(_ sender: UIButton){
+        
+    }
+    
+    @objc func submitTapped(_ sender: UIButton){
+        
+    }
+    
+    @objc func clearTapped(_ sender: UIButton){
+        
+    }
 }
 
 extension ViewController {
@@ -62,11 +73,13 @@ extension ViewController {
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("SUBMIT", for: .normal)
         view.addSubview(submit)
+        submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         
         let clear = UIButton(type: .system)
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("CLEAR", for: .normal)
         view.addSubview(clear)
+        clear.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         
         let buttonsView = UIView()
         buttonsView.translatesAutoresizingMaskIntoConstraints = false
@@ -125,6 +138,8 @@ extension ViewController {
                 buttonsView.addSubview(letterButton)
                 
                 letterButtons.append(letterButton)
+                
+                letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
             }
         }
     }
