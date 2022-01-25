@@ -14,6 +14,15 @@ class ViewController: UIViewController {
     var scoreLabel: UILabel!
     var letterButtons = [UIButton]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+}
+
+extension ViewController {
+    
     override func loadView() {
         view = UIView()
         view.backgroundColor = .white
@@ -115,12 +124,4 @@ class ViewController: UIViewController {
             }
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
 }
-
