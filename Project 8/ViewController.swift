@@ -56,7 +56,22 @@ class ViewController: UIViewController {
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            showWrongAnswerAlert()
+            currentAnswer.text = ""
+            
+            for button in activatedButtons {
+                button.isHidden = false
+            }
+            
+            activatedButtons.removeAll()
         }
+    }
+    
+    func showWrongAnswerAlert() {
+        let ac = UIAlertController(title: "Wrong Answer", message: "Think more and Try Again!", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OKAY", style: .default))
+        present(ac, animated: true)
     }
     
     func levelUp(action: UIAlertAction) {
