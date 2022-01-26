@@ -223,8 +223,12 @@ extension ViewController {
                 let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
                 
-                buttonsView.addSubview(letterButton)
+                letterButton.layer.borderWidth = 1
+                letterButton.layer.borderColor =  UIColor.lightGray.cgColor
                 
+                buttonsView.addSubview(letterButton)
+//                buttonsView.layer.borderWidth = 1
+//                buttonsView.layer.borderColor =  UIColor.lightGray.cgColor
                 letterButtons.append(letterButton)
                 
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
